@@ -1,0 +1,93 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" version="28.2.9">
+  <diagram name="NoSQL Conceptual Model" id="XOyM028aL10spkTUrQyG">
+    <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="AkHLuLYdoHyZnnAyla-z-9" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#38bdf8;endArrow=classic;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="140" y="180" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AkHLuLYdoHyZnnAyla-z-10" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#38bdf8;endArrow=classic;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="140" y="180" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AkHLuLYdoHyZnnAyla-z-11" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#38bdf8;endArrow=classic;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="240" y="110" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AkHLuLYdoHyZnnAyla-z-12" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#38bdf8;endArrow=classic;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="950" y="350" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AkHLuLYdoHyZnnAyla-z-13" value="user_sessions" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;fillColor=#0050ef;fontColor=#ffffff;strokeColor=#001DBC;gradientColor=default;" vertex="1" parent="1">
+          <mxGeometry x="80" y="560" width="200" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="AkHLuLYdoHyZnnAyla-z-14" value="+session_id (PK)&lt;br&gt;+customer_id (ref -&amp;gt; customer)&lt;br&gt;+merchant_id (ref -&amp;gt; merchant)&lt;div&gt;+started_at&lt;/div&gt;&lt;div&gt;+ended_at&lt;/div&gt;&lt;div&gt;+device&lt;/div&gt;&lt;div&gt;+events&lt;span style=&quot;color: rgb(15, 26, 19); text-align: center; text-wrap-mode: nowrap; background-color: transparent;&quot;&gt;[]&lt;/span&gt;&lt;/div&gt;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;whiteSpace=wrap;" vertex="1" parent="AkHLuLYdoHyZnnAyla-z-13">
+          <mxGeometry y="50" width="200" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="AkHLuLYdoHyZnnAyla-z-18" value="device (embedded)&#xa;+device_type&#xa;+os_family&#xa;+browser_family&#xa;+user_agent&#xa;+ip_address&#xa;+country" style="rounded=1;fillColor=#065f46;fontColor=#f0fdf4;strokeColor=#16a34a;align=left;gradientColor=default;" vertex="1" parent="1">
+          <mxGeometry x="80" y="750" width="200" height="119" as="geometry" />
+        </mxCell>
+        <mxCell id="AkHLuLYdoHyZnnAyla-z-19" value="events[] (embedded)&#xa;(event_type, timestamp, payment_id&#xa; + optional fields)" style="rounded=1;fillColor=#065f46;fontColor=#f0fdf4;strokeColor=#16a34a;align=left;gradientColor=default;" vertex="1" parent="1">
+          <mxGeometry x="80" y="880" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="AkHLuLYdoHyZnnAyla-z-20" value="api_logs" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;fillColor=#0050ef;fontColor=#ffffff;strokeColor=#001DBC;gradientColor=default;" vertex="1" parent="1">
+          <mxGeometry x="80" y="1000" width="200" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="AkHLuLYdoHyZnnAyla-z-21" value="+request_id (PK)&lt;br&gt;+merchant_id (ref -&amp;gt; merchant)&lt;br&gt;+customer_id (ref -&amp;gt; customer)&lt;div&gt;+endpoint&lt;/div&gt;&lt;div&gt;+http_method&lt;/div&gt;&lt;div&gt;+status_code&lt;/div&gt;&lt;div&gt;+latency_ms&lt;/div&gt;&lt;div&gt;+timestamp&lt;/div&gt;&lt;div&gt;+ip_address&lt;/div&gt;&lt;div&gt;+user_agent&lt;/div&gt;&lt;div&gt;+payload_size_bytes&lt;/div&gt;&lt;div&gt;+response_size_byte&lt;/div&gt;&lt;div&gt;+error_code&lt;/div&gt;&lt;div&gt;+error_message&lt;/div&gt;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;whiteSpace=wrap;" vertex="1" parent="AkHLuLYdoHyZnnAyla-z-20">
+          <mxGeometry y="50" width="200" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="AkHLuLYdoHyZnnAyla-z-22" value="ml_features" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;fillColor=#0050ef;fontColor=#ffffff;strokeColor=#001DBC;gradientColor=default;" vertex="1" parent="1">
+          <mxGeometry x="540" y="697" width="200" height="183" as="geometry" />
+        </mxCell>
+        <mxCell id="AkHLuLYdoHyZnnAyla-z-23" value="+entity_type (PK)&lt;div&gt;+merchant_id (ref -&amp;gt; merchant)&lt;br&gt;+customer_id (ref -&amp;gt; customer)&lt;br&gt;+entity_id&lt;div&gt;+timestamp&lt;div&gt;+features&lt;/div&gt;&lt;div&gt;+label&lt;/div&gt;&lt;div&gt;+model_version&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;whiteSpace=wrap;" vertex="1" parent="AkHLuLYdoHyZnnAyla-z-22">
+          <mxGeometry y="50" width="200" height="133" as="geometry" />
+        </mxCell>
+        <mxCell id="AkHLuLYdoHyZnnAyla-z-24" value="features (embedded)&#xa;+amount&#xa;+currency&#xa;+country&#xa;+device_type&#xa;+attempts_last&#xa;+chargebacks_last_90d&#xa;+merchant_risk_level&#xa;+customer_age_days&#xa;+customer_failed_payments" style="rounded=1;fillColor=#065f46;fontColor=#f0fdf4;strokeColor=#16a34a;align=left;gradientColor=default;" vertex="1" parent="1">
+          <mxGeometry x="535" y="890" width="210" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="AkHLuLYdoHyZnnAyla-z-25" value="label (embedded)&#xa;+is_fraud&#xa;+known_after_days" style="rounded=1;fillColor=#065f46;fontColor=#f0fdf4;strokeColor=#16a34a;align=left;gradientColor=default;" vertex="1" parent="1">
+          <mxGeometry x="540" y="1080" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="AkHLuLYdoHyZnnAyla-z-26" value="feedback" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;fillColor=#0050ef;fontColor=#ffffff;strokeColor=#001DBC;gradientColor=default;" vertex="1" parent="1">
+          <mxGeometry x="540" y="1190" width="200" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="AkHLuLYdoHyZnnAyla-z-27" value="+feedback_id (PK)&lt;br&gt;+customer_id (ref -&amp;gt; customer&lt;br&gt;+merchant_id (ref -&amp;gt; merchant)&lt;div&gt;+source&lt;/div&gt;&lt;div&gt;+rating&lt;/div&gt;&lt;div&gt;+comment&lt;/div&gt;&lt;div&gt;+language&lt;/div&gt;&lt;div&gt;+sentiment&lt;/div&gt;&lt;div&gt;+created_at&lt;/div&gt;&lt;div&gt;+tags&lt;/div&gt;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;whiteSpace=wrap;" vertex="1" parent="AkHLuLYdoHyZnnAyla-z-26">
+          <mxGeometry y="50" width="200" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="AkHLuLYdoHyZnnAyla-z-29" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;exitDx=0;exitDy=0;fillColor=#e3c800;strokeColor=#B09500;endSize=10;targetPerimeterSpacing=10;startSize=10;sourcePerimeterSpacing=10;strokeWidth=4;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="AkHLuLYdoHyZnnAyla-z-13" target="AkHLuLYdoHyZnnAyla-z-20">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="40" y="660" as="sourcePoint" />
+            <mxPoint x="40" y="1105" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AkHLuLYdoHyZnnAyla-z-30" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;exitDx=0;exitDy=0;entryDx=0;entryDy=0;endSize=10;targetPerimeterSpacing=10;startSize=10;sourcePerimeterSpacing=10;fillColor=#e3c800;strokeColor=#B09500;strokeWidth=4;exitX=1;exitY=0;entryX=-0.015;entryY=0.182;entryPerimeter=0;" edge="1" parent="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="283" y="569.69" as="sourcePoint" />
+            <mxPoint x="540" y="739.9959999999999" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AkHLuLYdoHyZnnAyla-z-32" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERzeroToMany;rounded=0;entryDx=0;entryDy=0;startArrow=ERmandOne;startFill=0;endSize=10;targetPerimeterSpacing=10;startSize=10;sourcePerimeterSpacing=10;fillColor=#d80073;strokeColor=#A50040;endFill=0;strokeWidth=4;entryX=0;entryY=0;" edge="1" parent="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="285" y="611" as="sourcePoint" />
+            <mxPoint x="535" y="1241" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AkHLuLYdoHyZnnAyla-z-33" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;exitDx=0;exitDy=0;entryDx=0;entryDy=0;entryPerimeter=0;startSize=10;sourcePerimeterSpacing=10;endSize=10;targetPerimeterSpacing=10;fillColor=#e3c800;strokeColor=#B09500;strokeWidth=4;" edge="1" parent="1" source="AkHLuLYdoHyZnnAyla-z-23" target="AkHLuLYdoHyZnnAyla-z-27">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="480" y="1060" as="sourcePoint" />
+            <mxPoint x="570" y="1655" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dtK-bLeRHTQQSPQCpiIL-1" value="&lt;span style=&quot;box-sizing: border-box; border: 0px solid rgb(229, 231, 235); margin: 0px; padding: 0px; outline-color: oklab(0.713643 -0.00286406 -0.0189429 / 0.5); font-weight: 600; font-family: Inter, ui-sans-serif, system-ui, sans-serif, &amp;quot;Apple Color Emoji&amp;quot;, &amp;quot;Segoe UI Emoji&amp;quot;, &amp;quot;Segoe UI Symbol&amp;quot;, &amp;quot;Noto Color Emoji&amp;quot;; text-align: start; background-color: rgb(251, 253, 255);&quot;&gt;&lt;font style=&quot;color: light-dark(rgb(255, 255, 255), rgb(255, 255, 255)); font-size: 30px;&quot;&gt;NoSQL Data Model&lt;/font&gt;&lt;/span&gt;" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="430" y="510" width="420" height="100" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
