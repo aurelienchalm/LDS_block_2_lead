@@ -38,7 +38,7 @@ Ce dépôt contient exclusivement les **documents techniques et schémas d’arc
 4. **Snowflake** – Stockage analytique et agrégations.  
 
 **Machine Learning**
-- Entraînement distribué via **Ray / EKS**, suivi par **MLflow**.  
+- Entraînement distribué pipeline Jenkins via **Ray / EKS**, suivi par **MLflow**.  
 - Déploiement en **API FastAPI** pour le scoring temps réel.  
 - Monitoring avec **Evidently** (drift et performance des modèles).  
 
@@ -56,7 +56,7 @@ Ce dépôt contient exclusivement les **documents techniques et schémas d’arc
 
 ## 📊 Livrables principaux
 
-1. **Schéma global d’architecture des données** (Draw.io)  
+1. **Schéma global d’architecture des données**  
 2. **Modèles OLTP, OLAP et NoSQL**  
 3. **Architecture des pipelines de données (ELT)**  
 4. **Plan de sécurité et conformité**  
