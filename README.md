@@ -18,7 +18,7 @@ Ce dépôt contient exclusivement les **documents techniques et schémas d’arc
 | `4_NoSQL_Data_Model.drawio` | Modèle de données MongoDB (collections, indexation, embedding vs referencing). + docx |
 | `5_Data_Pipeline_Architecture.docx` | Architecture des pipelines ELT (Airbyte, dbt, Airflow, Snowflake). |
 | `6_Security_and_Compliance_Plan.docx` | Plan de sécurité et conformité (RGPD, PCI-DSS, CCPA). |
-| `7_ML_Integration_Strategy.docx` | Stratégie d’intégration du Machine Learning (LightGBM, LSTM, MLflow, Evidently). + docx |
+| `7_ML_Integration_Strategy.docx` | Stratégie d’intégration du Machine Learning (MLflow, Evidently). + docx |
 | `8_SQL_and_NoSQL_Queries.docx` | Exemples de requêtes analytiques et opérationnelles (Snowflake + MongoDB). |
 | `LDS_Block_2_Lead.pptx` | Document de présentation du projet. |
 
